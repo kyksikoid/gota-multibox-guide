@@ -3,205 +3,60 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Multibox Overlay - Manual & Documentation</title>
+<title>MULTIBOX For Gota.io By Kuksik & Judex</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg-prim:#0b0c0e;--bg-sec:#141518;--bg-card:#1a1c22;--bg-code:#101114;--accent:#00dcff;--accent-warn:#ff2d41;--border:#2b2f38;--txt:#e4e7eb;--txt-dim:#8b929e}
+:root{--bg:#090a0c;--header-bg:#0f1013;--border:#1d2027;--txt:#e6e8eb;--txt-muted:#787f8d;--txt-dim:#4e5461;--accent:#3898ec}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg-prim);color:var(--txt);font-family:'Ubuntu',sans-serif;line-height:1.6;font-size:15px;overflow-x:hidden}
-.w-wrap{max-width:1080px;margin:0 auto;padding:30px 20px 80px}
-header{border-bottom:1px solid var(--border);padding-bottom:30px;margin-bottom:40px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:20px}
-.brand h1{font-size:24px;color:#fff;font-weight:700;letter-spacing:.5px;display:flex;align-items:center;gap:10px}
-.brand h1 span{color:var(--accent)}
-.badge{background:#18242b;border:1px solid #1f3d47;color:var(--accent);font-size:11px;font-weight:700;padding:3px 8px;border-radius:4px;text-transform:uppercase}
-nav a{color:var(--txt-dim);text-decoration:none;margin-left:18px;font-size:14px;transition:color .2s}
-nav a:hover{color:var(--accent)}
-.hero{background:linear-gradient(180deg,var(--bg-sec) 0%,var(--bg-prim) 100%);border:1px solid var(--border);border-radius:10px;padding:32px;margin-bottom:40px;position:relative;overflow:hidden}
-.hero h2{font-size:20px;color:#fff;margin-bottom:10px}
-.hero p{color:var(--txt-dim);max-width:760px;font-size:14px}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:20px;margin-bottom:40px}
-.card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:14px}
-.card-head{display:flex;justify-content:space-between;align-items:center}
-.card-title{font-size:16px;color:#fff;font-weight:700}
-.card-tag{font-size:11px;background:#242831;padding:2px 7px;border-radius:4px;color:var(--txt-dim);font-family:'JetBrains Mono',monospace}
-.card p{font-size:13.5px;color:var(--txt-dim)}
-.rule-box{background:#1a1415;border-left:3px solid var(--accent-warn);padding:14px;border-radius:0 6px 6px 0;margin:10px 0}
-.rule-box h4{color:var(--accent-warn);font-size:13px;margin-bottom:5px;text-transform:uppercase}
-.rule-box ul{padding-left:18px;font-size:13px;color:#d1b8b8}
-.table-wrap{overflow-x:auto;margin-top:10px}
-table{width:100%;border-collapse:collapse;font-size:13px}
-th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--border)}
-th{color:var(--txt-dim);font-weight:600;background:var(--bg-sec)}
-td:first-child{font-family:'JetBrains Mono',monospace;color:var(--accent)}
-.interactive-calc{background:var(--bg-sec);border:1px solid var(--border);border-radius:8px;padding:24px;margin-top:30px}
-.calc-inputs{display:flex;gap:15px;margin-top:15px;flex-wrap:wrap}
-.input-grp{display:flex;flex-direction:column;gap:6px}
-.input-grp label{font-size:12px;color:var(--txt-dim);font-weight:600;text-transform:uppercase}
-input[type="number"],select{background:var(--bg-code);border:1px solid var(--border);color:#fff;padding:8px 12px;border-radius:5px;outline:none;font-family:'JetBrains Mono',monospace;font-size:13px}
-.calc-res{margin-top:20px;padding:15px;background:var(--bg-code);border:1px solid var(--border);border-radius:6px;font-family:'JetBrains Mono',monospace;font-size:13px;color:var(--accent)}
-footer{border-top:1px solid var(--border);padding-top:25px;margin-top:60px;text-align:center;font-size:12px;color:var(--txt-dim)}
+body{background:var(--bg);color:var(--txt);font-family:'Ubuntu',sans-serif;min-height:100vh;display:flex;flex-direction:column}
+header{background:var(--header-bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+.nav-wrap{max-width:1400px;margin:0 auto;padding:0 24px;min-height:64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.brand{display:flex;flex-direction:column;gap:2px;padding:12px 0}
+.brand-title{font-size:18px;font-weight:700;color:#fff;letter-spacing:0.3px;display:flex;align-items:center;gap:6px}
+.brand-title span{color:var(--accent);letter-spacing:0.8px}
+.brand-ver{font-size:11px;color:var(--txt-dim);font-weight:500;letter-spacing:0.2px}
+nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+.nav-link{color:var(--txt-muted);text-decoration:none;font-size:13.5px;font-weight:500;transition:color 0.15s ease}
+.nav-link:hover{color:#fff}
+.nav-link.active{color:var(--accent)}
+main{flex:1;max-width:1400px;width:100%;margin:0 auto;padding:30px 24px}
+@media(max-width:860px){
+  .nav-wrap{padding:14px 20px}
+  nav{gap:14px}
+  .nav-link{font-size:12.5px}
+}
 </style>
 </head>
 <body>
-<div class="w-wrap">
-  <header>
+<header>
+  <div class="nav-wrap">
     <div class="brand">
-      <h1>MULTIBOX <span>OVERLAY</span></h1>
-      <span class="badge">v0.3.3 Docs</span>
+      <div class="brand-title"><span>MULTIBOX</span> For Gota.io By Kuksik & Judex</div>
+      <div class="brand-ver">v0.3.3</div>
     </div>
-    <nav>
-      <a href="#quickstart">Quickstart</a>
-      <a href="#autorev">Auto-Rev</a>
-      <a href="#opt">Optimization</a>
-      <a href="#keys">Keybinds</a>
-      <a href="#calc">Calculator</a>
+    <nav id="_0x_nv">
+      <a href="#solo-trick" class="nav-link">Solo-Trick</a>
+      <a href="#fast-feed" class="nav-link">Fast-Feed</a>
+      <a href="#auto-rev" class="nav-link">Auto-Rev</a>
+      <a href="#optimization" class="nav-link">Optimization</a>
+      <a href="#keybinds" class="nav-link">Keybinds</a>
+      <a href="#name-changer" class="nav-link">Name Changer</a>
     </nav>
-  </header>
-
-  <div class="hero" id="quickstart">
-    <h2>Getting Started</h2>
-    <p>This script integrates real-time visual tracking, frustum culling, and automation macros into Gota.io via Tampermonkey. To toggle the primary interface, click the floating <strong>MULTIBOX</strong> pill located at the top-right border of your viewport or tap your configured menu bind (default: <strong>Right Shift</strong>).</p>
   </div>
-
-  <div class="grid">
-    <div class="card">
-      <div class="card-head">
-        <span class="card-title">Interface Navigation</span>
-        <span class="card-tag">UI / Controls</span>
-      </div>
-      <p>The overlay consists of a draggable control center and a floating target anchor:</p>
-      <table>
-        <tr><th>Element</th><th>Description</th></tr>
-        <tr><td>Pill Header</td><td>Click to toggle window visibility; hold and drag to relocate across screen edges.</td></tr>
-        <tr><td>Key Record</td><td>Click any keybind button until it lights purple (...), then hit your desired key or mouse button.</td></tr>
-        <tr><td>Number Sliders</td><td>Click or drag sliders to alter delay timings (50ms - 3000ms).</td></tr>
-      </table>
-    </div>
-
-    <div class="card">
-      <div class="card-head">
-        <span class="card-title">Macro Engine</span>
-        <span class="card-tag">Actions</span>
-      </div>
-      <p>Integrated macros communicate via broadcast channels for synchronization:</p>
-      <table>
-        <tr><th>Mode</th><th>Default</th><th>Function</th></tr>
-        <tr><td>Solo-Trick</td><td>Solo Delay</td><td>Executes double-step split sequences with pre-defined delay.</td></tr>
-        <tr><td>Autofeed 1/2</td><td>Auto Delay</td><td>Automated continuous feeding burst cycles.</td></tr>
-        <tr><td>Trick 2-256</td><td>Digit 4-8</td><td>Direct multi-split execution triggers (1x to 8x).</td></tr>
-      </table>
-    </div>
-
-    <div class="card" id="autorev">
-      <div class="card-head">
-        <span class="card-title">Auto-Rev Mechanics</span>
-        <span class="card-tag">Computer Vision</span>
-      </div>
-      <p>Auto-Rev performs edge detection and circle extraction directly on the WebGL frame buffer to compute target cell mass and trajectory.</p>
-      <div class="rule-box">
-        <h4>Crucial Game Settings</h4>
-        <ul>
-          <li>Disable player nicknames in the game settings.</li>
-          <li>Disable mass indicators inside cells.</li>
-          <li>Disable custom skins (must be flat color).</li>
-          <li>Keep your zoom and camera static while locked.</li>
-        </ul>
-      </div>
-      <p>Failure to disable these settings will disrupt the color threshold scanner and generate false split alerts.</p>
-    </div>
-
-    <div class="card" id="opt">
-      <div class="card-head">
-        <span class="card-title">Engine Optimization</span>
-        <span class="card-tag">Performance</span>
-      </div>
-      <p>Features configured to preserve high frame rates during high-density multi-splits:</p>
-      <table>
-        <tr><th>Feature</th><th>Mechanism</th></tr>
-        <tr><td>Frustum Culling</td><td>Intercepts PixiJS render loops and masks out off-screen stage children.</td></tr>
-        <tr><td>Cull Margin</td><td>Configures boundary threshold (30px-500px) before nodes are excluded.</td></tr>
-        <tr><td>Strip Filters</td><td>Removes heavy canvas blur, drop-shadow, and stroke filter trees.</td></tr>
-      </table>
-    </div>
-  </div>
-
-  <div class="card" id="keys">
-    <div class="card-head">
-      <span class="card-title">Default Keybind Matrix</span>
-      <span class="card-tag">Configuration</span>
-    </div>
-    <div class="table-wrap">
-      <table>
-        <thead>
-          <tr><th>Action Identifier</th><th>Default Input</th><th>Scope</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>keyMenu</td><td>ShiftRight</td><td>Toggle GUI Visibility</td></tr>
-          <tr><td>keyRevLock / keyRevUnlock</td><td>KeyR</td><td>Engage / Disengage Auto-Rev Tracking</td></tr>
-          <tr><td>keyRevSplit1 - keyRevSplit3</td><td>Digit1, Digit2, Digit3</td><td>Set split exponent (2, 4, 8)</td></tr>
-          <tr><td>keyT16 - keyT256</td><td>Digit4 - Digit8</td><td>Multi-split triggers (16, 32, 64, 128, 256)</td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
-
-  <div class="interactive-calc" id="calc">
-    <div class="card-head">
-      <span class="card-title">Split Mass Estimator</span>
-      <span class="card-tag">Internal Formula</span>
-    </div>
-    <p style="color:var(--txt-dim);font-size:13px;margin-top:6px">Calculates projected piece mass and target radius based on the engine's internal scale conversions.</p>
-    <div class="calc-inputs">
-      <div class="input-grp">
-        <label>Current Mass</label>
-        <input type="number" id="_0x_m" value="1000" min="10" max="50000" step="50">
-      </div>
-      <div class="input-grp">
-        <label>Split Count</label>
-        <select id="_0x_s">
-          <option value="2">2 (1 split)</option>
-          <option value="4" selected>4 (2 splits)</option>
-          <option value="8">8 (3 splits)</option>
-          <option value="16">16 (4 splits)</option>
-          <option value="32">32 (5 splits)</option>
-        </select>
-      </div>
-    </div>
-    <div class="calc-res" id="_0x_out">Awaiting calculation...</div>
-  </div>
-
-  <footer>
-    Multibox Overlay Documentation &bull; Built for Gota.io Client Integration
-  </footer>
-</div>
-
+</header>
+<main id="app-root"></main>
 <script>
-(function(_0xa,_0xb){
-  const _0xc=_0xa.getElementById('_0x_m');
-  const _0xd=_0xa.getElementById('_0x_s');
-  const _0xe=_0xa.getElementById('_0x_out');
-  function _0xf(){
-    const _0x1=parseFloat(_0xc.value)||0;
-    const _0x2=parseInt(_0xd.value,10)||1;
-    const _0x3=Math.max(1,Math.floor(_0x1/_0x2));
-    const _0x4=Math.round(Math.sqrt(_0x3)*10);
-    const _0x5=Math.round(Math.sqrt(_0x1)*10);
-    _0xe.innerHTML='Initial Radius: '+_0x5+'px | Post-Split Piece Mass: '+_0x3+' (Radius ~'+_0x4+'px)';
-  }
-  _0xc.addEventListener('input',_0xf);
-  _0xd.addEventListener('change',_0xf);
-  _0xf();
-  const _0x10=_0xa.querySelectorAll('nav a');
-  for(let _0x11=0;_0x11<_0x10.length;_0x11++){
-    _0x10[_0x11].addEventListener('click',function(_0x12){
-      _0x12.preventDefault();
-      const _0x13=_0xa.querySelector(this.getAttribute('href'));
-      if(_0x13)_0x13.scrollIntoView({behavior:'smooth'});
+(function(_0xa){
+  const _0xb=_0xa.querySelectorAll('.nav-link');
+  for(let _0xc=0;_0xc<_0xb.length;_0xc++){
+    _0xb[_0xc].addEventListener('click',function(_0xd){
+      for(let _0xe=0;_0xe<_0xb.length;_0xe++)_0xb[_0xe].classList.remove('active');
+      this.classList.add('active');
     });
   }
-})(document,window);
+})(document);
 </script>
 </body>
 </html>
