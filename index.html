@@ -92,11 +92,27 @@ video{width:100%;height:100%;object-fit:contain;outline:none}
       </div>
       <div class="card-desc">
         <p>Want to quickly dump mass into yourself or feed a teammate? That is what Fast-Feed is for. Toggle Freeze Mouse in the direction you want to feed, then hit your Fast-Feed bind. Only the tab you pressed the bind from will split.</p>
-        <p>It executes 5 splits (32 pieces), pauses for your configured delay, and then shoots another 5 splits (32 pieces). P.S. when you are sitting on heavy mass (like 800k), bump your delay slider up slightly to around 850ms so your pieces do not merge too early or get stuck.</p>
+        <p>It executes 5 splits (32 pieces), pauses for your configured delay, and then shoots another 5 splits (32 pieces). P.S. when you are sitting on heavy mass (like 800k), bump your delay slider up slightly to around 850ms so it does not trigger too early.</p>
       </div>
       <div class="video-box">
         <video id="fast-feed-video" controls playsinline preload="metadata">
           <source src="fast-feed.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <section class="card" id="auto-rev">
+      <div class="card-head">
+        <span class="card-title">Auto-Rev</span>
+      </div>
+      <div class="card-desc">
+        <p>Look, I know Auto-Rev is not built the cleanest way, but we had no other choice because the game is heavily protected. For this feature to actually work well, you need decent FPS and low ping, plus you have to strictly follow these rules:</p>
+        <p>The target cell must be fully visible and not hidden behind other cells or screen edges. You <strong>MUST</strong> disable mass display, skins, and enemy nicknames in your game settings, or the script will instantly fail and cause false triggers. Keep your camera completely static and avoid zooming during use.</p>
+        <p>Note: There is a ~10ms processing delay with a slight margin of error, but it is built this way to stay working across future game updates. You will get used to it.</p>
+      </div>
+      <div class="video-box">
+        <video id="auto-rev-video" controls playsinline preload="metadata">
+          <source src="auto-rev.mp4" type="video/mp4">
         </video>
       </div>
     </section>
