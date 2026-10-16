@@ -6,14 +6,15 @@
 <title>MULTIBOX For Gota.io By Kuksik & Judex</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#090a0c;--header-bg:#0f1013;--border:#1d2027;--txt:#e6e8eb;--txt-muted:#787f8d;--txt-dim:#4e5461;--accent:#3898ec}
+:root{--bg:#090a0c;--header-bg:rgba(15,16,19,0.92);--card:#121418;--card-border:#1e222a;--border:#1d2027;--txt:#e6e8eb;--txt-muted:#8a92a0;--txt-dim:#555c6b;--accent:#3898ec;--accent-sub:#246ab0}
 *{box-sizing:border-box;margin:0;padding:0}
-body{background:var(--bg);color:var(--txt);font-family:'Ubuntu',sans-serif;min-height:100vh;display:flex;flex-direction:column}
-header{background:var(--header-bg);border-bottom:1px solid var(--border);position:sticky;top:0;z-index:100}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--txt);font-family:'Ubuntu',sans-serif;min-height:100vh;padding-top:76px;line-height:1.6}
+header{background:var(--header-bg);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);position:fixed;top:0;left:0;width:100%;z-index:9999}
 .nav-wrap{max-width:1400px;margin:0 auto;padding:0 24px;min-height:64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
-.brand{display:flex;flex-direction:column;gap:2px;padding:12px 0}
+.brand{display:flex;flex-direction:column;gap:2px;padding:10px 0}
 .brand-title{font-size:18px;font-weight:700;color:#fff;letter-spacing:0.3px;display:flex;align-items:center;gap:6px}
 .brand-title span{color:var(--accent);letter-spacing:0.8px}
 .brand-ver{font-size:11px;color:var(--txt-dim);font-weight:500;letter-spacing:0.2px}
@@ -21,11 +22,32 @@ nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .nav-link{color:var(--txt-muted);text-decoration:none;font-size:13.5px;font-weight:500;transition:color 0.15s ease}
 .nav-link:hover{color:#fff}
 .nav-link.active{color:var(--accent)}
-main{flex:1;max-width:1400px;width:100%;margin:0 auto;padding:30px 24px}
+main{max-width:1100px;width:100%;margin:0 auto;padding:36px 20px 100px}
+.section{margin-bottom:60px}
+.section-header{margin-bottom:24px;display:flex;flex-direction:column;gap:6px}
+.section-tag{font-size:12px;color:var(--accent);font-weight:700;letter-spacing:1px;text-transform:uppercase;font-family:'JetBrains Mono',monospace}
+.section-title{font-size:24px;font-weight:700;color:#fff}
+.guide-flow{display:grid;grid-template-columns:1fr;gap:16px;margin-bottom:30px}
+.step-card{background:var(--card);border:1px solid var(--card-border);border-radius:10px;padding:22px;display:flex;gap:18px;align-items:flex-start}
+.step-num{background:#181c24;border:1px solid #283040;color:var(--accent);font-family:'JetBrains Mono',monospace;font-weight:700;font-size:15px;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.step-body{display:flex;flex-direction:column;gap:6px}
+.step-title{font-size:16px;font-weight:700;color:#fff}
+.step-desc{font-size:14px;color:var(--txt-muted)}
+.step-desc strong{color:#fff}
+.hl{color:var(--accent);font-weight:600}
+.kb{display:inline-block;background:#1e232d;border:1px solid #313949;color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;padding:1px 6px;border-radius:4px;margin:0 2px}
+.note-box{background:#101318;border-left:3px solid var(--accent);padding:16px 20px;border-radius:0 8px 8px 0;margin:24px 0}
+.note-box p{font-size:13.5px;color:#c0c7d4}
+.video-wrapper{width:100%;max-width:880px;margin:30px auto 0;background:#050608;border:1px solid var(--card-border);border-radius:12px;overflow:hidden;box-shadow:0 12px 36px rgba(0,0,0,0.6)}
+.video-header{background:#101216;padding:12px 18px;border-bottom:1px solid var(--card-border);display:flex;justify-content:space-between;align-items:center;font-size:12px;color:var(--txt-dim)}
+.video-container{position:relative;width:100%;aspect-ratio:16/9;background:#000;display:flex;align-items:center;justify-content:center}
+video{width:100%;height:100%;object-fit:contain;outline:none}
 @media(max-width:860px){
-  .nav-wrap{padding:14px 20px}
+  body{padding-top:110px}
+  .nav-wrap{padding:12px 18px}
   nav{gap:14px}
   .nav-link{font-size:12.5px}
+  .step-card{padding:16px;gap:12px}
 }
 </style>
 </head>
@@ -37,7 +59,7 @@ main{flex:1;max-width:1400px;width:100%;margin:0 auto;padding:30px 24px}
       <div class="brand-ver">v0.3.3</div>
     </div>
     <nav id="_0x_nv">
-      <a href="#solo-trick" class="nav-link">Solo-Trick</a>
+      <a href="#solo-trick" class="nav-link active">Solo-Trick</a>
       <a href="#fast-feed" class="nav-link">Fast-Feed</a>
       <a href="#auto-rev" class="nav-link">Auto-Rev</a>
       <a href="#optimization" class="nav-link">Optimization</a>
@@ -46,7 +68,70 @@ main{flex:1;max-width:1400px;width:100%;margin:0 auto;padding:30px 24px}
     </nav>
   </div>
 </header>
-<main id="app-root"></main>
+
+<main id="app-root">
+  <section class="section" id="solo-trick">
+    <div class="section-header">
+      <span class="section-tag">Gameplay Guide</span>
+      <h2 class="section-title">Solo-Trick (Multibox Trick)</h2>
+    </div>
+
+    <div class="guide-flow">
+      <div class="step-card">
+        <div class="step-num">01</div>
+        <div class="step-body">
+          <div class="step-title">Lock Primary (Big) Cell Vector</div>
+          <div class="step-desc">Aim your cursor toward the target trajectory and hold <span class="hl">Freeze Mouse</span> (or the combination of <span class="hl">Line + Freeze Mouse</span>). This locks the travel vector for your primary account's automated splits.</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">02</div>
+        <div class="step-body">
+          <div class="step-title">Direct Secondary (Small) Cell</div>
+          <div class="step-desc">Keep your active browser tab on the smaller feeder account. Move toward the enemy cell and point your cursor precisely where the split mass needs to land.</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">03</div>
+        <div class="step-body">
+          <div class="step-title">Trigger Mass-Specific Bind</div>
+          <div class="step-desc">Press your configured keybind based on your small cell's current mass. For instance, at approximately <strong>20k mass</strong>, press the default key <span class="kb">7</span> (<span class="hl">Trick 128</span> — dividing into 128 pieces through 7 rapid splits).</div>
+        </div>
+      </div>
+
+      <div class="step-card">
+        <div class="step-num">04</div>
+        <div class="step-body">
+          <div class="step-title">Automated Synchronous Split Cycle</div>
+          <div class="step-desc">
+            Pressing the bind executes two synchronized operations across both tabs:<br>
+            1. The active small cell instantly splits toward your cursor (<span class="kb">7</span> splits).<br>
+            2. The background big cell performs <strong>5 splits (32 pieces)</strong> along the frozen direction, pauses for the exact configured delay (<span class="hl">Solo Delay</span>, default <strong>800ms</strong>), and performs an additional <strong>5 splits (32 pieces)</strong> to complete the trick and feed forward.
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="note-box">
+      <p><strong>Result:</strong> An independent, instantaneous multibox trick executed entirely from your feeder tab without manual window switching.</p>
+    </div>
+
+    <div class="video-wrapper">
+      <div class="video-header">
+        <span>Tutorial Video: Solo-Trick Execution</span>
+        <span>MP4 / WebM</span>
+      </div>
+      <div class="video-container">
+        <video id="solo-video" controls playsinline preload="metadata">
+          <source src="solo-trick.mp4" type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </section>
+</main>
+
 <script>
 (function(_0xa){
   const _0xb=_0xa.querySelectorAll('.nav-link');
