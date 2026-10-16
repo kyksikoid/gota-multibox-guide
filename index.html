@@ -3,39 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>MULTIBOX For Gota.io By Kuksik & Judex</title>
+<title>MULTIBOX For Gota.io By Kuksik & Judex Tutorial</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
 <style>
-:root{--bg-prim:#0b0c0e;--bg-card:#1a1c22;--border:#2b2f38;--txt:#e4e7eb;--txt-dim:#8b929e;--accent:#3898ec}
+:root{--bg-prim:#0b0c0e;--bg-card:#14161b;--border:#222630;--txt:#dbe0e6;--txt-dim:#7a8290;--accent:#3898ec;--danger:#e03131}
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{background:var(--bg-prim);color:var(--txt);font-family:'Ubuntu',sans-serif;min-height:100vh;padding-top:76px;line-height:1.7}
-header{background:rgba(15,16,19,0.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);position:fixed;top:0;left:0;width:100%;z-index:9999}
-.nav-wrap{max-width:1400px;margin:0 auto;padding:0 24px;min-height:64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+body{background:var(--bg-prim);color:var(--txt);font-family:'Ubuntu',sans-serif;min-height:100vh;padding-top:76px;line-height:1.65}
+header{background:rgba(12,13,16,0.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);position:fixed;top:0;left:0;width:100%;z-index:9999}
+.nav-wrap{max-width:1440px;margin:0 auto;padding:0 24px;min-height:64px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
 .brand{display:flex;flex-direction:column;gap:2px;padding:10px 0}
 .brand-title{font-size:18px;font-weight:700;color:#fff;letter-spacing:0.3px;display:flex;align-items:center;gap:6px}
 .brand-title span{color:var(--accent);letter-spacing:0.8px}
 .brand-ver{font-size:11px;color:var(--txt-dim);font-weight:500;letter-spacing:0.2px}
-nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
+nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
 .nav-link{color:var(--txt-dim);text-decoration:none;font-size:13.5px;font-weight:500;transition:color 0.15s ease}
 .nav-link:hover{color:#fff}
 .nav-link.active{color:var(--accent)}
-main{max-width:1400px;width:100%;margin:0 auto;padding:36px 20px 100px}
-.diagonal-half-wrap{width:52vw;min-width:320px;max-width:820px;margin:0 auto}
-.card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:24px;display:flex;flex-direction:column;gap:18px;box-shadow:0 10px 30px rgba(0,0,0,0.45)}
-.card-head{display:flex;justify-content:space-between;align-items:center}
+main{max-width:1440px;width:100%;margin:0 auto;padding:26px 24px 100px}
+.browser-alert{background:#161112;border:1px solid #361a1d;border-left:4px solid var(--danger);color:#d1b6b8;font-size:13.5px;padding:12px 18px;border-radius:6px;margin-bottom:26px}
+.browser-alert b{color:#ff6b6b}
+.grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.card-head{display:flex;align-items:center}
 .card-title{font-size:17px;color:#fff;font-weight:700}
-.card-tag{font-size:11px;background:#242831;padding:3px 8px;border-radius:4px;color:var(--txt-dim);font-family:'JetBrains Mono',monospace}
-.card-desc{font-size:14px;color:var(--txt);text-align:justify}
+.card-desc{font-size:13.8px;color:var(--txt);text-align:left}
+.card-desc p{margin-bottom:10px}
+.card-desc p:last-child{margin-bottom:0}
 .card-desc strong{color:#fff}
-.card-desc .kb{display:inline-block;background:#242831;border:1px solid #363c4a;color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;padding:1px 6px;border-radius:4px;margin:0 2px}
+.card-desc .kb{display:inline-block;background:#1d212b;border:1px solid #333a4a;color:#fff;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:600;padding:1px 6px;border-radius:4px;margin:0 2px}
 .card-desc .hl{color:var(--accent);font-weight:600}
-.video-box{width:100%;aspect-ratio:16/9;background:#060709;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-top:4px}
+.video-box{width:100%;aspect-ratio:16/9;background:#050608;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-top:6px}
 video{width:100%;height:100%;object-fit:contain;outline:none}
-@media(max-width:920px){
-  .diagonal-half-wrap{width:100%}
+@media(max-width:960px){
+  .grid-2col{grid-template-columns:1fr}
   body{padding-top:110px}
   .nav-wrap{padding:12px 18px}
   nav{gap:14px}
@@ -47,7 +50,7 @@ video{width:100%;height:100%;object-fit:contain;outline:none}
 <header>
   <div class="nav-wrap">
     <div class="brand">
-      <div class="brand-title"><span>MULTIBOX</span> For Gota.io By Kuksik & Judex</div>
+      <div class="brand-title"><span>MULTIBOX</span> For Gota.io By Kuksik & Judex Tutorial</div>
       <div class="brand-ver">v0.3.3</div>
     </div>
     <nav id="_0x_nv">
@@ -62,18 +65,38 @@ video{width:100%;height:100%;object-fit:contain;outline:none}
 </header>
 
 <main id="app-root">
-  <div class="diagonal-half-wrap">
+  <div class="browser-alert">
+    <b>Important:</b> This script is designed strictly for Google Chrome. If you are using Yandex Browser, delete it or burn it off your PC. The script will simply not work there.
+  </div>
+
+  <div class="grid-2col">
     <section class="card" id="solo-trick">
       <div class="card-head">
-        <span class="card-title">Solo-Trick Tutorial</span>
-        <span class="card-tag">Multibox Gameplay</span>
+        <span class="card-title">Solo-Trick</span>
       </div>
       <div class="card-desc">
-        This feature is built specifically for multibox play across two tabs with one primary large cell and one smaller feeder cell. On your primary cell, direct your mouse toward the attack trajectory and hold <span class="hl">Freeze Mouse</span> (or <span class="hl">Line + Freeze Mouse</span>) to lock its movement vector. Next, switch to your feeder cell, steer toward the action, and trigger the trick bind corresponding to your mass—for example, at approximately 20k mass, tap default key <span class="kb">7</span> (<span class="hl">Trick 128</span>). Upon pressing the bind, your active feeder cell instantly splits 7 times (into 128 pieces) toward your cursor, while your primary cell in the background simultaneously fires 5 splits (32 pieces) along the locked line, waits for the configured <span class="hl">Solo Delay</span> (default 800ms in the top slider), and automatically splits another 5 times (32 pieces) to feed forward and finish the trick, achieving an automated independent trick without manual tab switching.
+        <p>This feature is made strictly for playing with a multibox setup across two tabs, where you have one big cell and one small feeder. On your big cell, point your cursor in the direction you want to shoot and toggle Freeze Mouse (or toggle Line + Freeze Mouse). Do not hold it down, you must toggle it on or it will not trigger.</p>
+        <p>Next, switch to your small cell, push toward the fight, and tap the trick key that fits your current mass. For example, if you have around 20k mass, tap the default key <span class="kb">7</span> (<span class="hl">Trick 128</span>). Your small cell instantly splits 7 times (into 128 pieces) toward your cursor. At the exact same moment, the big cell in the background fires 5 splits (32 pieces) along your locked line, waits for your configured Solo Delay (800ms by default in the top slider), and fires another 5 splits (32 pieces).</p>
+        <p>Right after tapping your trick key, all you have to do is hold your standard in-game feed key so your feeder cell dumps its mass properly. That gives you a clean, independent solo-trick without ever switching tabs manually.</p>
       </div>
       <div class="video-box">
         <video id="solo-video" controls playsinline preload="metadata">
           <source src="solo-trick.mp4" type="video/mp4">
+        </video>
+      </div>
+    </section>
+
+    <section class="card" id="fast-feed">
+      <div class="card-head">
+        <span class="card-title">Fast-Feed</span>
+      </div>
+      <div class="card-desc">
+        <p>Want to quickly dump mass into yourself or feed a teammate? That is what Fast-Feed is for. Toggle Freeze Mouse in the direction you want to feed, then hit your Fast-Feed bind. Only the tab you pressed the bind from will split.</p>
+        <p>It executes 5 splits (32 pieces), pauses for your configured delay, and then shoots another 5 splits (32 pieces). P.S. when you are sitting on heavy mass (like 800k), bump your delay slider up slightly to around 850ms so your pieces do not merge too early or get stuck.</p>
+      </div>
+      <div class="video-box">
+        <video id="fast-feed-video" controls playsinline preload="metadata">
+          <source src="fast-feed.mp4" type="video/mp4">
         </video>
       </div>
     </section>
