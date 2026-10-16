@@ -18,15 +18,18 @@ header{background:rgba(12,13,16,0.95);backdrop-filter:blur(8px);border-bottom:1p
 .brand-title{font-size:18px;font-weight:700;color:#fff;letter-spacing:0.3px;display:flex;align-items:center;gap:6px}
 .brand-title span{color:var(--accent);letter-spacing:0.8px}
 .brand-ver{font-size:11px;color:var(--txt-dim);font-weight:500;letter-spacing:0.2px}
-nav{display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+nav{display:flex;align-items:center;gap:22px;flex-wrap:wrap}
 .nav-link{color:var(--txt-dim);text-decoration:none;font-size:13.5px;font-weight:500;transition:color 0.15s ease}
 .nav-link:hover{color:#fff}
 .nav-link.active{color:var(--accent)}
 main{max-width:1440px;width:100%;margin:0 auto;padding:26px 24px 100px}
-.browser-alert{background:#161112;border:1px solid #361a1d;border-left:4px solid var(--danger);color:#d1b6b8;font-size:13.5px;padding:12px 18px;border-radius:6px;margin-bottom:26px}
+.browser-alert{background:#161112;border:1px solid #361a1d;border-left:4px solid var(--danger);color:#d1b6b8;font-size:13.5px;padding:12px 18px;border-radius:6px;margin-bottom:34px}
 .browser-alert b{color:#ff6b6b}
-.grid-2col{display:grid;grid-template-columns:1fr 1fr;gap:24px;align-items:start}
-.card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:16px}
+.diagonal-flow{display:flex;flex-direction:column;gap:40px;width:100%}
+.card{background:var(--bg-card);border:1px solid var(--border);border-radius:8px;padding:22px;display:flex;flex-direction:column;gap:16px;width:58%;box-shadow:0 12px 32px rgba(0,0,0,0.45)}
+.card:nth-child(1){align-self:flex-start}
+.card:nth-child(2){align-self:center}
+.card:nth-child(3){align-self:flex-end}
 .card-head{display:flex;align-items:center}
 .card-title{font-size:17px;color:#fff;font-weight:700}
 .card-desc{font-size:13.8px;color:var(--txt);text-align:left}
@@ -37,8 +40,8 @@ main{max-width:1440px;width:100%;margin:0 auto;padding:26px 24px 100px}
 .card-desc .hl{color:var(--accent);font-weight:600}
 .video-box{width:100%;aspect-ratio:16/9;background:#050608;border:1px solid var(--border);border-radius:6px;overflow:hidden;margin-top:6px}
 video{width:100%;height:100%;object-fit:contain;outline:none}
-@media(max-width:960px){
-  .grid-2col{grid-template-columns:1fr}
+@media(max-width:1020px){
+  .card{width:100% !important;align-self:stretch !important}
   body{padding-top:110px}
   .nav-wrap{padding:12px 18px}
   nav{gap:14px}
@@ -57,9 +60,6 @@ video{width:100%;height:100%;object-fit:contain;outline:none}
       <a href="#solo-trick" class="nav-link active">Solo-Trick</a>
       <a href="#fast-feed" class="nav-link">Fast-Feed</a>
       <a href="#auto-rev" class="nav-link">Auto-Rev</a>
-      <a href="#optimization" class="nav-link">Optimization</a>
-      <a href="#keybinds" class="nav-link">Keybinds</a>
-      <a href="#name-changer" class="nav-link">Name Changer</a>
     </nav>
   </div>
 </header>
@@ -69,7 +69,7 @@ video{width:100%;height:100%;object-fit:contain;outline:none}
     <b>Important:</b> This script is designed strictly for Google Chrome. If you are using Yandex Browser, delete it or burn it off your PC. The script will simply not work there.
   </div>
 
-  <div class="grid-2col">
+  <div class="diagonal-flow">
     <section class="card" id="solo-trick">
       <div class="card-head">
         <span class="card-title">Solo-Trick</span>
